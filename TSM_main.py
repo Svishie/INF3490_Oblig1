@@ -27,12 +27,14 @@ def get_permutations( cities ):
     return itertools.permutations( cities )
 
 def distance_permutation( permutation, cities, distance ):
-    distance = 0
-    prev == None
+    dist = 0.0
+    prev = None
     for c in permutation:
         if prev != None:
-            distance = distance + get_distance( cities, distance, prev, c )
+            dist = dist + float( get_distance( cities, distance, prev, c ) )
         prev = c
+    dist = dist + float( get_distance( cities, distance, permutation[-1], permutation[0] ) )
+    return dist
 
 
 def random_permutation(iterable, r=None):
